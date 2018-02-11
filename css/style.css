@@ -89,3 +89,12 @@ p{
     margin-right: 10px;
     margin-left: 10px;
 }
+
+#btn_log{
+    border-radius: 100px;
+    width: 105px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: block
+}

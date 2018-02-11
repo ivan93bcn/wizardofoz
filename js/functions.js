@@ -4,7 +4,6 @@ init_chat();
 //init_log();
 
 var log = [];
-//var file = new File();
 
 function init_chat(){
     $("#p_input").keyup(function(event) {
@@ -22,38 +21,22 @@ function getSpaces(num) {
     return text;
 }
 
-function getButtonPosition(gesture) {
-    alert("Boton: " + gesture);
+function writePosition(gesture) {
+    write_log("Gesto: " + gesture);
 }
 
 function init_buttons(){
     var i;
-    for(i=0; i < 6; i++){
+    var botons_ani = [":)", ":(", ":|", ":_(", "..."];
+    for(i=0; i < botons_ani.length; i++){
         var boton = document.createElement("button");
         boton.className = "btn btn-primary btn-lg botones";
         boton.id = "btn_ani_" + i;
-        switch(i){
-            case 0:
-                boton.innerHTML = ":)";
-                break;
-            case 1:
-                boton.innerHTML = ":(";
-                break;
-            case 2:
-                boton.innerHTML = ":|";
-                break;
-            case 3:
-                boton.innerHTML = ":_(";
-                break;
-            default:
-                boton.innerHTML = "...";
-            break;
-        }
-        $(boton).on("click", function(){ getButtonPosition(this.innerHTML); });
+        boton.innerHTML = botons_ani[i];
+        $(boton).on("click", function(){ writePosition(this.innerHTML); });
         $("#gestures").append(boton, getSpaces(6));
     }
 }
-
 
 function sendText() {
     
@@ -61,8 +44,7 @@ function sendText() {
 
     if(text != ""){
         if(text.includes("::")){
-            //write_log(text.split("::")[1]);
-            console.log(text.split("::")[1]);
+            write_log(text.split("::")[1]);
         } else{
             document.getElementById("p_chat").innerHTML += "<br>" + "&nbsp+ " +text;
         }
@@ -76,28 +58,58 @@ function destroyClickedElement(event)
     document.body.removeChild(event.target);
 }
 
-function write_log(texto){
-/*
-    log.push({
-        key:   log.length,
-        date: "date",
-        text: texto
-    });*/
+var textFile = null,
+makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+        window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+};
+
+getDate = function (){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd = '0' + dd
+    } 
+
+    if(mm<10) {
+        mm = '0' + mm
+    } 
+
+    return dd + '/' + mm + '/' + yyyy;
 }
 
-/*
-$("#btn_save_log").click( function() {
-    
-    var FileSaver = require('file-saver');
+getTime = function (){
+    var today = new Date();
+    var hh = today.getHours();
+    var mm = today.getMinutes();
+    var ss = today.getSeconds();
 
-    var text = $("#p_input").val();
-    var filename = "log_antonia";
-    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    FileSaver.saveAs(blob, filename + ".txt");
-    });
-*/
-function init_log(){
+    return hh + ':' + mm + ':' + ss;
+}
 
+function write_log(mensaje){
+    var hora = getTime();
+    var username = "antonia";
+    var filename = "log" + username + ".txt";
+    textbox = document.getElementById('text_log');
+    if(textbox.value == "")
+        textbox.value = " ------- " + getDate() + " ------- ";
+    textbox.value += hora + " - " + mensaje + " ..... ";
+    var link = document.getElementById('btn_log');
+    link.href = makeTextFile(textbox.value);
+    link.download = filename;
 }
 
 function init_caracteristicas(){
