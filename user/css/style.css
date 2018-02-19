@@ -1,0 +1,112 @@
+.inputs{
+    width: 120%;
+}
+
+#container{
+    background-color: #BCB8C9; 
+    width: 400px;
+    align-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+html{
+    background-color:cadetblue;
+}
+
+div{
+    border-radius: 10px;
+}
+
+h1{
+    background-color: chocolate; 
+    text-align: center;
+    border-radius: 10px;
+}
+
+body{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+    background-color: cadetblue;
+}
+
+#body_left {
+    left: 0;
+    background-color: #A4BCBF; 
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
+#body_right {
+    right: 0;
+    background-color: #BCB8C9; 
+    margin-right: 10px;
+}
+
+.half {
+    display: block;  
+    width: 50%; 
+    height: 100%;
+    overflow-x : hidden;
+    position: absolute;
+    margin-bottom: 10px;
+}
+
+p{
+    display: block; 
+    outline: #000000 solid thin; 
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+#p_car{
+    height: 200px;
+}
+
+#p_chat{
+    height: 200px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+#p_input{
+    outline: #000000 solid thin; 
+    margin-left: 10px; 
+    margin-right: 10px;
+    width: 80%;
+}
+
+
+#avatar{
+    background-color: #A4BCBF;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 96%;
+}
+
+#btn_send{
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+}
+
+.botones{
+    border-radius: 10px;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#btn_log{
+    border-radius: 100px;
+    width: 105px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: block
+}

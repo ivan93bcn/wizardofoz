@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head style="padding-left: 10px; padding-top: 10px; padding-right: 10px">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Mago de Oz</title>
+  </head>
+
+  <body>
+    <h1>Mago de Oz</h1>
+    <!--<p style="background-color: #A4BCBF">Párrafo 1</p>
+    <p style="background-color: #BCB8C9">Párrafo 2</p>-->
+    <div id="form_user">
+      <div class="container" id="container">
+      <h2 style="text-align: center">Formulario</h2>
+      <div class="form-vertical" id="form" autocomplete="off"> 
+        <div class="form-group">
+          <label class="control-label col-sm-2">Nombre:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control inputs" id="nombre" placeholder="Introduzca nombre" name="nombre">
+            <!--<span id="error" class="help-block"></span>-->
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2">Edad:</label>
+          <div class="col-sm-10">          
+            <input type="text" class="form-control inputs" id="edad" placeholder="Introduzca edad" name="edad">
+            <!--<span id="error" class="help-block"></span>-->
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-8">Motivo de la conexión:</label>
+          <div class="col-sm-10">          
+            <textarea type="text" class="form-control inputs" id="desc" placeholder="Escriba su motivo..." name="desc"></textarea>
+            <!--<span id="error" class="help-block"></span>-->
+          </div>
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" id="boton" class="btn btn-default" onclick="send_info()" style="margin-bottom: 20px">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Javascript -->
+    <script type="text/javascript " src="js/functions.js"></script>
+</html>

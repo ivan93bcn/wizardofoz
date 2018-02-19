@@ -1,7 +1,6 @@
 init_buttons();
 init_caracteristicas();
 init_chat();
-//init_log();
 
 var log = [];
 
@@ -60,7 +59,13 @@ function destroyClickedElement(event)
 
 var textFile = null,
 makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/plain'});
+
+    var acc = "";
+    for(var i = 0; i < text.length; i++){
+        acc += text[i];
+    }
+
+    var data = new Blob([acc], {type: 'text/plain'});
 
     // If we are replacing a previously generated file we need to
     // manually revoke the object URL to avoid memory leaks.
@@ -102,13 +107,12 @@ getTime = function (){
 function write_log(mensaje){
     var hora = getTime();
     var username = "antonia";
-    var filename = "log" + username + ".txt";
-    textbox = document.getElementById('text_log');
-    if(textbox.value == "")
-        textbox.value = " ------- " + getDate() + " ------- ";
-    textbox.value += hora + " - " + mensaje + " ..... ";
+    var filename = "log_" + username + ".txt";
+    if(log.length == 0)
+        log.push(" ------- " + getDate() + " ------- \r\n");
+    log.push(hora + " - " + mensaje + "\r\n");
     var link = document.getElementById('btn_log');
-    link.href = makeTextFile(textbox.value);
+    link.href = makeTextFile(log);
     link.download = filename;
 }
 
@@ -118,6 +122,5 @@ function init_caracteristicas(){
         document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Característica " + (i+1) + ": ";
     }
 }
-
 
 //https://www.pubnub.com/blog/2015-08-25-webrtc-video-chat-app-in-20-lines-of-javascript/

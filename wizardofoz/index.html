@@ -16,8 +16,8 @@
 
   <body>
     <h1>Mago de Oz</h1>
-    <p style="background-color: #A4BCBF">Párrafo 1</p>
-    <p style="background-color: #BCB8C9">Párrafo 2</p>
+    <!--<p style="background-color: #A4BCBF">Párrafo 1</p>
+    <p style="background-color: #BCB8C9">Párrafo 2</p>-->
     <div id="body_left" class="half">
         <div style="text-align: center">
           <div id="avatar">
@@ -37,7 +37,6 @@
                 <p id="p_chat">&nbsp;<b>Chat con el usuario:</b></p>
                 <input type="text" id="p_input" name="p_input" placeholder="Escribir chat (:: para log)"></input>
                 <button type="button" id="btn_send" onClick="sendText()" class="btn-primary btn-sm">Enviar</button>
-                <textarea id="text_log" style="display: none"></textarea> 
                 <a type="button" class="btn-primary btn-sm" id="btn_log">Descargar log</a>
             </div>
     </div>
@@ -54,4 +53,8 @@
 
     <!-- Javascript -->
     <script type="text/javascript " src="js/functions.js"></script>
+
+    <!-- PHP -->
+    <?php include 'php/getinfouser.php';?>
+
 </html>

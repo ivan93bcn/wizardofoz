@@ -1,0 +1,26 @@
+{
+  "name": "wizardofoz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "file-saver": "^1.3.3",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivan93bcn/wizardofoz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivan93bcn/wizardofoz/issues"
+  },
+  "homepage": "https://github.com/ivan93bcn/wizardofoz#readme"
+}
