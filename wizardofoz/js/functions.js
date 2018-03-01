@@ -1,5 +1,4 @@
 init_buttons();
-init_caracteristicas();
 init_chat();
 
 var log = [];
@@ -43,14 +42,24 @@ function sendText() {
 
     if(text != ""){
         if(text.includes("::")){
-            write_log(text.split("::")[1]);
+            write_log(" (log) " + text.split("::")[1]);
         } else{
             document.getElementById("p_chat").innerHTML += "<br>" + "&nbsp+ " +text;
+            sendChat(text);
+            write_log(" + " + text);
         }
     }
 
     document.getElementById("p_input").value = "";
 }  
+
+function sendChat(mensaje){
+    var pack = {
+        type: "chat",
+        chat: mensaje
+    }
+    server.sendMessage(pack);
+}
 
 function destroyClickedElement(event)
 {
@@ -106,21 +115,23 @@ getTime = function (){
 
 function write_log(mensaje){
     var hora = getTime();
-    var username = "antonia";
+    var username = users[0].name;
     var filename = "log_" + username + ".txt";
     if(log.length == 0)
         log.push(" ------- " + getDate() + " ------- \r\n");
-    log.push(hora + " - " + mensaje + "\r\n");
+    log.push(hora + mensaje + "\r\n");
     var link = document.getElementById('btn_log');
     link.href = makeTextFile(log);
     link.download = filename;
 }
 
-function init_caracteristicas(){
-
-    for(var i=0; i < 4; i++){
-        document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Característica " + (i+1) + ": ";
+function send_wizard_info(){
+    var pack = {
+        type: "info",
+        name: "Profesor Font",
+        age: "38",
+        institution: "UB - UPF",
+        lecturename: "El mundo de la informática"
     }
+    server.sendMessage(pack);
 }
-
-//https://www.pubnub.com/blog/2015-08-25-webrtc-video-chat-app-in-20-lines-of-javascript/

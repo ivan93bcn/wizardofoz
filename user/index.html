@@ -19,40 +19,40 @@
     <!--<p style="background-color: #A4BCBF">Párrafo 1</p>
     <p style="background-color: #BCB8C9">Párrafo 2</p>-->
     <div id="form_user">
-      <div class="container" id="container">
-      <h2 style="text-align: center">Formulario</h2>
-      <div class="form-vertical" id="form" autocomplete="off"> 
-        <div class="form-group">
-          <label class="control-label col-sm-2">Nombre:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control inputs" id="nombre" placeholder="Introduzca nombre" name="nombre">
-            <!--<span id="error" class="help-block"></span>-->
+        <div class="container" id="container">
+        <h2 style="text-align: center">Formulario</h2>
+        <div class="form-vertical" id="form" autocomplete="off"> 
+          <div class="form-group">
+            <label class="control-label col-sm-2">Nombre:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control inputs" id="nombre" placeholder="Introduzca nombre" name="nombre">
+              <span id="error_nombre" class="help-block"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Edad:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control inputs" id="edad" placeholder="Introduzca edad" name="edad">
+              <span id="error_edad" class="help-block"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-8">Motivo de la conexión:</label>
+            <div class="col-sm-10">          
+              <textarea type="text" class="form-control inputs" id="desc" placeholder="Escriba su motivo..." name="desc"></textarea>
+              <span id="error_desc" class="help-block"></span>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" id="boton" class="btn btn-default" onclick="send_info()" style="margin-bottom: 20px">Entrar</button>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2">Edad:</label>
-          <div class="col-sm-10">          
-            <input type="text" class="form-control inputs" id="edad" placeholder="Introduzca edad" name="edad">
-            <!--<span id="error" class="help-block"></span>-->
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-8">Motivo de la conexión:</label>
-          <div class="col-sm-10">          
-            <textarea type="text" class="form-control inputs" id="desc" placeholder="Escriba su motivo..." name="desc"></textarea>
-            <!--<span id="error" class="help-block"></span>-->
-          </div>
-        </div>
-        <div class="form-group">        
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" id="boton" class="btn btn-default" onclick="send_info()" style="margin-bottom: 20px">Entrar</button>
-          </div>
-        </div>
-      </div>
     </div>
   </body>
 
-  <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -61,4 +61,7 @@
 
     <!-- Javascript -->
     <script type="text/javascript " src="js/functions.js"></script>
+    <!--<script type="text/javascript " src="js/script.js"></script>-->
+    <script type="text/javascript " src="/js/sillyclient.js"></script>
+    <script type="text/javascript " src="js/server.js"></script>
 </html>
