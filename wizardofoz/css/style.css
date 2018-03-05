@@ -1,5 +1,6 @@
 html{
-    background-color:cadetblue;
+    background-color: #91dbde;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 
 div{
@@ -10,15 +11,16 @@ h1{
     background-color: chocolate; 
     text-align: center;
     border-radius: 10px;
+    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
 }
 
 body{
     margin-top: 10px;
     margin-right: 10px;
     margin-left: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;	
     height: 100%;
-    background-color: cadetblue;
+
 }
 
 #body_left {
@@ -26,12 +28,14 @@ body{
     background-color: #A4BCBF; 
     margin-left: 10px;
     padding-right: 10px;
+    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
 }
 
 #body_right {
     right: 0;
-    background-color: #BCB8C9; 
+    background-color: #A4BCBF; 
     margin-right: 10px;
+    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
 }
 
 .half {
