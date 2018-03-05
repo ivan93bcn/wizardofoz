@@ -64,6 +64,7 @@ p{
 
 #p_car{
     height: 200px;
+    margin-top: 10px;
 }
 
 #p_chat{
@@ -75,7 +76,6 @@ p{
 #p_input{
     outline: #000000 solid thin; 
     margin-left: 10px; 
-    margin-right: 10px;
     width: 80%;
 }
 
@@ -92,6 +92,8 @@ p{
     border-radius: 10px;
     width: 70px;
     height: 30px;
+    margin-left: 10px; 
+    margin-top: 5px; 
 }
 
 .botones{

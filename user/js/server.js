@@ -46,9 +46,17 @@ function write_chat(mensaje){
 }
 
 function write_caracteristicas(mensaje){
-	
+	delay(500);
 	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Nombre : " + mensaje.name;
 	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Edad : " + mensaje.age;
 	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Institución : " + mensaje.institution;
 	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Nombre de la clase : " + mensaje.lecturename;
+}
+
+function delay(milisegundos)
+{
+	for(var i=0; i <= milisegundos; i++)
+	{
+		setTimeout('', 1);
+	}
 }

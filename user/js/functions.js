@@ -38,15 +38,17 @@ validate_form = function (){
     var edad = document.getElementById("edad").value;
     var desc = document.getElementById("desc").value;
 
-    
+    var error_nombre = document.getElementById("error_nombre");
+    var error_edad = document.getElementById("error_edad");
+
     if(nombre == ""){
-        document.getElementById("error_nombre").innerHTML = "Nombre obligatorio";
-        document.getElementById("error_edad").innerHTML = "";
+        error_nombre.innerHTML = "Nombre obligatorio";
+        error_edad.innerHTML = "";
         return false;
     }
     if(edad == ""){
-        document.getElementById("error_edad").innerHTML = "Edad obligatoria";
-        document.getElementById("error_nombre").innerHTML = "";
+        error_edad.innerHTML = "Edad obligatoria";
+        error_nombre.innerHTML = "";
         return false;
     }
     return true;
@@ -62,12 +64,11 @@ function send_info(){
         }
         server.sendMessage(pack);
         load_userchat();
+        init_chat();
     }
 }
 
 function load_userchat(){
     $("#form_user").load("chatuser.html");
-    //init_caracteristicas();
-    //init_chat();
 }
 
