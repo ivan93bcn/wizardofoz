@@ -1,6 +1,6 @@
 html{
-    background-color: #91dbde;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #91DBDE;
+    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
 }
 
 div{
@@ -8,39 +8,45 @@ div{
 }
 
 h1{
-    background-color: chocolate; 
     text-align: center;
-    border-radius: 10px;
-    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+    background-color: #91DBDE;
+    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
+    font-family: fantasy;
+    font-weight: bold;
 }
 
 body{
     margin-top: 10px;
     margin-right: 10px;
     margin-left: 10px;
-    margin-bottom: 10px;	
+    margin-bottom: 10px;
     height: 100%;
-
+    background-color: #ABAAFB;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #body_left {
     left: 0;
-    background-color: #A4BCBF; 
+    background-color: #ABAAFB;
     margin-left: 10px;
     padding-right: 10px;
-    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+    background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+
+
 }
 
 #body_right {
     right: 0;
-    background-color: #A4BCBF; 
+    background-color: #ABAAFB;
     margin-right: 10px;
-    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+    background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+
+
 }
 
 .half {
-    display: block;  
-    width: 50%; 
+    display: block;
+    width: 50%;
     height: 100%;
     overflow-x : hidden;
     position: absolute;
@@ -48,9 +54,8 @@ body{
 }
 
 p{
-    display: block; 
-    outline: #000000 solid thin; 
-    margin-left: 10px; 
+    display: block;
+    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -63,11 +68,12 @@ p{
     height: 200px;
     background-color: white;
     overflow-y: scroll;
+    outline: #000000 solid thin;
 }
 
 #p_input{
-    outline: #000000 solid thin; 
-    margin-left: 10px; 
+    outline: #000000 solid thin;
+    margin-left: 10px;
     margin-right: 10px;
     width: 80%;
 }
@@ -84,8 +90,8 @@ p{
     border-radius: 10px;
     width: 70px;
     height: 30px;
-    margin-left: 10px; 
-    margin-top: 5px; 
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 .botones{
