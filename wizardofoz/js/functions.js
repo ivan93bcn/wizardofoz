@@ -1,6 +1,3 @@
-init_buttons();
-init_chat();
-
 var log = [];
 
 function init_chat(){
@@ -127,11 +124,106 @@ function write_log(mensaje){
 
 function send_wizard_info(){
     var pack = {
-        type: "info",
-        name: "Profesor Font",
-        age: "38",
-        institution: "UB - UPF",
-        lecturename: "El mundo de la informática"
+        type: "info_mago",
+        name: document.getElementById("nombre").value,
+        age: document.getElementById("edad").value,
+        inst: document.getElementById("inst").value,
+        cargo: document.getElementById("cargo").value
     }
     server.sendMessage(pack);
+}
+
+validate_form = function (){
+    
+    var nombre = document.getElementById("nombre");
+    var edad = document.getElementById("edad");
+    var inst = document.getElementById("inst");
+    var cargo = document.getElementById("cargo");
+
+    var error_nombre = document.getElementById("error_nombre");
+    var error_edad = document.getElementById("error_edad");
+    var error_inst = document.getElementById("error_inst");
+    var error_cargo = document.getElementById("error_cargo");
+
+    if(nombre.value == ""){
+        error_nombre.innerHTML = "Nombre obligatorio";
+        error_edad.innerHTML = "";
+        error_inst.innerHTML = "";
+        error_cargo.innerHTML = "";
+        nombre.focus();
+        nombre.classList.add("input_error");
+        edad.classList.remove("input_error");
+        inst.classList.remove("input_error");
+        cargo.classList.remove("input_error");
+        return false;
+    }
+    else if(edad.value == ""){
+        error_edad.innerHTML = "Edad obligatoria";
+        error_nombre.innerHTML = "";
+        error_inst.innerHTML = "";
+        error_cargo.innerHTML = "";
+        edad.focus();
+        edad.classList.add("input_error");
+        nombre.classList.remove("input_error");
+        inst.classList.remove("input_error");
+        cargo.classList.remove("input_error");
+        return false;
+    }
+    else if(inst.value == ""){
+        error_inst.innerHTML = "Institución obligatoria";
+        error_nombre.innerHTML = "";
+        error_edad.innerHTML = "";
+        error_cargo.innerHTML = "";
+        inst.focus();
+        inst.classList.add("input_error");
+        nombre.classList.remove("input_error");
+        edad.classList.remove("input_error");
+        cargo.classList.remove("input_error");
+        return false;
+    }
+    else if(cargo.value == ""){
+        error_cargo.innerHTML = "Cargo obligatorio";
+        error_nombre.innerHTML = "";
+        error_edad.innerHTML = "";
+        error_inst.innerHTML = "";        
+        cargo.focus();
+        cargo.classList.add("input_error");
+        nombre.classList.remove("input_error");
+        edad.classList.remove("input_error");
+        inst.classList.remove("input_error");
+        return false;
+    }
+    return true;
+}
+
+function save_info(){
+    if(validate_form()){      
+        load_userchat();
+        init_buttons();
+        init_chat();
+        send_wizard_info();
+    }
+}
+
+function load_userchat(){
+    document.getElementById('container').style.display = "none";
+    document.getElementById('half').style.display = "";
+}
+
+function add_user(user){
+    users.push(user);
+
+    var pos = users.length - 1;
+
+    $("#dropdown ul").append('<li><a onClick="show_chars(\'' + pos + '\'); return false;">' + user.name + '</a></li>');
+    send_wizard_info();
+}
+
+function show_chars(pos){
+
+	var caracteristicas = "&nbsp Nombre: " + users[pos].name +
+							 "<br>&nbsp Edad: " + users[pos].age + 
+							 "<br>&nbsp Motivo: " + users[pos].desc;
+
+	document.getElementById("p_car").innerHTML = caracteristicas;
 }

@@ -23,7 +23,7 @@ server.on_message = function(user_id, message){
 	var msg = JSON.parse(message);
 
 	if(msg.type == "info")
-		init_caracteristicas(msg);
+		new_user(msg);
 	else if (msg.type == "chat")
 		write_chat(msg.chat)
 
@@ -43,15 +43,10 @@ server.on_close = function(){
 	console.log("Server closed the connection" );
 }
 
-function init_caracteristicas(caracteristicas){
-
-	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Nombre : " + caracteristicas.name;
-	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Edad : " + caracteristicas.age;
-	document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Motivo : " + caracteristicas.desc;
-
+function new_user(caracteristicas){
+    
     var user = new User(caracteristicas.name, caracteristicas.age, caracteristicas.desc);
-	users.push(user);
-	send_wizard_info();
+	add_user(user);
 }
 
 function write_chat(mensaje){

@@ -15,30 +15,82 @@
   </head>
 
   <body>
-    <h1>Mago de Oz</h1>
-    <div id="body_left" class="half">
-        <div style="text-align: center">
-          <div id="avatar">
-            <h2 style="text-align: center">Avatar</h2>
-            <img src="img/facade.jpg" alt="Mago de Oz" align="center">
-            <canvas></canvas>
+    <div class="container-fluid" style="height:100vh;">
+      <div class="row top-row">
+        <h1>Mago de Oz</h1>
+      </div>
+      <div class="container" id="container">
+          <h2 style="text-align: center">Formulario</h2>
+          <div class="form-vertical" id="form" autocomplete="off"> 
+            <div class="form-group">
+              <label class="control-label col-sm-2">Nombre:</label>
+              <div class="col-sm-10">
+                <input required type="text" class="form-control inputs" id="nombre" placeholder="Introduzca nombre" name="nombre">
+                <span id="error_nombre" class="help-block"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">Edad:</label>
+              <div class="col-sm-10">          
+                <input required type="number" class="form-control inputs" id="edad" placeholder="Introduzca edad" name="edad">
+                <span id="error_edad" class="help-block"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-8">Institución:</label>
+              <div class="col-sm-10">          
+                <input required type="text" class="form-control inputs" id="inst" placeholder="Introduzca institución" name="inst"></input>
+                <span id="error_inst" class="help-block"></span>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-8">Cargo:</label>
+                <div class="col-sm-10">          
+                  <input required type="text" class="form-control inputs" id="cargo" placeholder="Introduzca cargo" name="cargo"></input>
+                  <span id="error_cargo" class="help-block"></span>
+                </div>
+              </div>
+            <div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="boton" class="btn btn-default" onclick="save_info()" style="margin-bottom: 20px">Entrar</button>
+              </div>
+            </div>
           </div>
-            <div id="gestures">
-              <h2 style="text-align: center">Gestures</h2>
+      </div>
+      <div class="row" id="half" style="height: 90%; display: none;">
+        <div class="col-sm-6">
+            <div id="avatar" class="row">
+              <h2>Avatar</h2>
+              <canvas></canvas>
+            </div>
+            <div id="gestos" class="row">
+              <h2>Gestos</h2>
+              <div id="gestures"></div>
             </div>
         </div>
-    </div>
-    <div id="body_right" class="half">
-            <div><p id="p_car">&nbsp;<b>Características:</b></p></div>
-            <div>
-                <p id="p_chat">&nbsp;<b>Chat con el usuario:</b></p>
-                <input type="text" id="p_input" name="p_input" placeholder="Escribir chat (:: para log)"></input>
-                <button type="button" id="btn_send" onClick="sendText()" class="btn-primary btn-sm">Enviar</button>
-                <a type="button" class="btn-primary btn-sm" id="btn_log">Descargar log</a>
+        <div class="col-sm-6">
+          <div id="users" class="row">
+            <h2>Usuarios</h2>
+            <div id="user">
+              <div class="dropdown" id="dropdown">
+                <button class="btn btn-primary dropdown-toggle drop" type="button" data-toggle="dropdown">Usuarios conectados
+                </button>
+                <ul class="dropdown-menu">
+                </ul>
+              </div>
+              <p id="p_car"></p>
             </div>
+          </div>
+          <div id="chat" class="row">
+              <h2>Chat</h2>
+              <p id="p_chat"></p>
+              <input type="text" id="p_input" name="p_input" placeholder="Escribir chat (:: para log)">
+              <button type="button" id="btn_send" onClick="sendText()" class="btn-primary btn-sm">Enviar</button>
+              <a type="button" class="btn-primary btn-sm" id="btn_log">Descargar log</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-
   </body>
 
   <!-- Optional JavaScript -->
@@ -49,8 +101,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Javascript -->
+    <script type="text/javascript " src="../js/sillyclient.js"></script>
     <script type="text/javascript " src="js/functions.js"></script>
-    <script type="text/javascript " src="/js/sillyclient.js"></script>
+   
     <script type="text/javascript " src="js/server.js"></script>
     <script type="text/javascript " src="js/user.js"></script>
 </html>

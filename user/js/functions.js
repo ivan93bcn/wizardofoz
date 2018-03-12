@@ -25,30 +25,29 @@ function sendChat(mensaje){
     server.sendMessage(pack);
 }
 
-function init_caracteristicas(){
-
-    for(var i=0; i < 4; i++){
-        document.getElementById("p_car").innerHTML += "<br>" + "&nbsp- Característica " + (i+1) + ": ";
-    }
-}
-
 validate_form = function (){
     
-    var nombre = document.getElementById("nombre").value;
-    var edad = document.getElementById("edad").value;
-    var desc = document.getElementById("desc").value;
+    var nombre = document.getElementById("nombre");
+    var edad = document.getElementById("edad");
+    var desc = document.getElementById("desc");
 
     var error_nombre = document.getElementById("error_nombre");
     var error_edad = document.getElementById("error_edad");
 
-    if(nombre == ""){
+    if(nombre.value == ""){
         error_nombre.innerHTML = "Nombre obligatorio";
+        nombre.classList.add("input_error");
+        edad.classList.remove("input_error");
         error_edad.innerHTML = "";
+        nombre.focus();
         return false;
     }
-    if(edad == ""){
+    else if(edad.value == ""){
         error_edad.innerHTML = "Edad obligatoria";
         error_nombre.innerHTML = "";
+        nombre.classList.remove("input_error");
+        edad.classList.add("input_error");
+        edad.focus();
         return false;
     }
     return true;
@@ -69,6 +68,6 @@ function send_info(){
 }
 
 function load_userchat(){
-    $("#form_user").load("chatuser.html");
+    document.getElementById('container').style.display = "none";
+    document.getElementById('half').style.display = "";
 }
-
